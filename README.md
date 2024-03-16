@@ -1,0 +1,3 @@
+- npm install
+- npm i -g ts-node typescript
+- ts-node server.ts
