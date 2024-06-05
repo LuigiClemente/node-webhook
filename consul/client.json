@@ -1,0 +1,36 @@
+{
+  "node_name": "consul-client-3",
+  "data_dir": "/consul/data",
+  "ports": {
+    "https": 8501
+  },
+  "bind_addr": "10.0.0.4",
+  "client_addr": "10.0.0.4",
+  "serf_lan": "10.0.0.4",
+  "auto_config": {
+    "enabled": true,
+    "intro_token_file": "/consul/config/tokens/jwt",
+    "server_addresses": [
+      "10.0.0.2:8300",
+      "10.0.0.2:8303",
+      "10.0.0.2:8306"
+    ]
+  },
+  "verify_incoming": false,
+  "verify_outgoing": true,
+  "verify_server_hostname": true,
+  "ca_file": "/consul/config/certs/consul-agent-ca.pem",
+  "services": [
+    {
+      "id": "node-webhook",
+      "name": "node-webhook",
+      "address": "10.0.0.4",
+      "port": 4003,
+      "check": {
+        "tcp": "10.0.0.4:4003",
+        "interval": "10s",
+        "timeout": "1s"
+      }
+    }
+  ]
+}

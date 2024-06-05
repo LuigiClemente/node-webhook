@@ -1,0 +1,11 @@
+{
+  "realm": "master",
+  "auth-server-url": "http://localhost:9080",
+  "proxy-url": "http://localhost:9080",
+  "ssl-required": "none",
+  "bearer-only": true,
+  "resource": "saleor",
+  "public-client": true,
+  "confidential-port": 0,
+  "enable-cors": true
+}
